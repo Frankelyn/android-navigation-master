@@ -28,9 +28,7 @@ import androidx.navigation.NavController
 import androidx.navigation.Navigation.findNavController
 import androidx.navigation.findNavController
 import androidx.navigation.fragment.NavHostFragment
-import androidx.navigation.ui.AppBarConfiguration
-import androidx.navigation.ui.onNavDestinationSelected
-import androidx.navigation.ui.setupWithNavController
+import androidx.navigation.ui.*
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.google.android.material.navigation.NavigationView
 
@@ -104,7 +102,7 @@ class MainActivity : AppCompatActivity() {
 //        // This allows NavigationUI to decide what label to show in the action bar
 //        // By using appBarConfig, it will also determine whether to
 //        // show the up arrow or drawer menu icon
-//        setupActionBarWithNavController(navController, appBarConfig)
+        setupActionBarWithNavController(navController, appBarConfig)
         // TODO END STEP 9.6
     }
 
@@ -134,10 +132,10 @@ class MainActivity : AppCompatActivity() {
     }
 
     // TODO STEP 9.7 - Have NavigationUI handle up behavior in the ActionBar
-//    override fun onSupportNavigateUp(): Boolean {
-//        // Allows NavigationUI to support proper up navigation or the drawer layout
+   override fun onSupportNavigateUp(): Boolean {
+//         Allows NavigationUI to support proper up navigation or the drawer layout
 //        // drawer menu, depending on the situation
-//        return findNavController(R.id.my_nav_host_fragment).navigateUp(appBarConfiguration)
-//    }
+        return findNavController(R.id.my_nav_host_fragment).navigateUp(appBarConfiguration)
+    }
     // TODO END STEP 9.7
 }
